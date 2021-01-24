@@ -17,11 +17,16 @@ const ScriptList = () => {
     }, [])
 
     return (
-        <Row>
-            <Col span={12}>
-                <ScriptTable scripts={scripts} />
-            </Col>
-        </Row>
+        <>
+            <div style={{ margin: '50px auto', width: '100%' }}>
+                <h2 style={{ width: '100%', textAlign: 'center', color: 'green' }}>DANH SÁCH KỊCH BẢN SẤY</h2>
+            </div>
+            <Row>
+                <Col span={12}>
+                    <ScriptTable scripts={scripts} />
+                </Col>
+            </Row>
+        </>
     )
 }
 

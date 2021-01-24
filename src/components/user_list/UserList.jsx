@@ -19,26 +19,26 @@ const UserList = () => {
         return () => { }
     }, [])
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
-    const renderNoticeFinishedSession = () => {
-        dispatch(updateFinishedSession([false]))
+    // const renderNoticeFinishedSession = () => {
+    //     dispatch(updateFinishedSession([false]))
 
-        return (
-            swal({
-                title: 'Message',
-                text: 'Session finished!!!',
-                icon: 'success',
-                buttons: 'OK'
-            })
-        )
-    }
+    //     return (
+    //         swal({
+    //             title: 'Message',
+    //             text: 'Session finished!!!',
+    //             icon: 'success',
+    //             buttons: 'OK'
+    //         })
+    //     )
+    // }
 
-    const finished = useSelector(state => state.finished)
+    // const finished = useSelector(state => state.finished)
 
     return (
         <>
-            {finished[0] ? renderNoticeFinishedSession() : <></>}
+            {/* {finished[0] ? renderNoticeFinishedSession() : <></>} */}
             <Row>
                 <div style={{ margin: '50px auto', width: '100%' }}>
                     <h2 style={{ width: '100%', textAlign: 'center', color: 'green' }}>DANH SÁCH NGƯỜI DÙNG</h2>

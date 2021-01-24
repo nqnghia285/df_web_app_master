@@ -41,25 +41,25 @@ const AddMachine = () => {
         position: ''
     }
 
-    const dispatch = useDispatch()
-    const finished = useSelector(state => state.finished)
+    // const dispatch = useDispatch()
+    // const finished = useSelector(state => state.finished)
 
-    const renderNoticeFinishedSession = () => {
-        dispatch(updateFinishedSession([false]))
+    // const renderNoticeFinishedSession = () => {
+    //     dispatch(updateFinishedSession([false]))
 
-        return (
-            swal({
-                title: 'Message',
-                text: 'Session finished!!!',
-                icon: 'success',
-                buttons: 'OK'
-            })
-        )
-    }
+    //     return (
+    //         swal({
+    //             title: 'Message',
+    //             text: 'Session finished!!!',
+    //             icon: 'success',
+    //             buttons: 'OK'
+    //         })
+    //     )
+    // }
 
     return (
         <>
-            {finished[0] ? renderNoticeFinishedSession() : <></>}
+            {/* {finished[0] ? renderNoticeFinishedSession() : <></>} */}
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchemaAddMachine}

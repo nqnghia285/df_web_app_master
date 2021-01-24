@@ -45,24 +45,24 @@ const AddScript = () => {
         humidity: 0.0
     }
 
-    const renderNoticeFinishedSession = () => {
-        dispatch(updateFinishedSession([false]))
+    // const renderNoticeFinishedSession = () => {
+    //     dispatch(updateFinishedSession([false]))
 
-        return (
-            swal({
-                title: 'Message',
-                text: 'Session finished!!!',
-                icon: 'success',
-                buttons: 'OK'
-            })
-        )
-    }
+    //     return (
+    //         swal({
+    //             title: 'Message',
+    //             text: 'Session finished!!!',
+    //             icon: 'success',
+    //             buttons: 'OK'
+    //         })
+    //     )
+    // }
 
-    const finished = useSelector(state => state.finished)
+    // const finished = useSelector(state => state.finished)
 
     return (
         <>
-            {finished[0] ? renderNoticeFinishedSession() : <></>}
+            {/* {finished[0] ? renderNoticeFinishedSession() : <></>} */}
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchemaAddScript}

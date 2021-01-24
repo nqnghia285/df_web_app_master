@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { FormGroup, Input, Label } from 'reactstrap'
-import Select from 'react-select'
+import React from 'react';
+import Select from 'react-select';
+import { FormGroup, Label } from 'reactstrap';
 
 SelectField.propTypes = {
     field: PropTypes.object.isRequired,
@@ -26,8 +26,7 @@ function SelectField(props) {
         label, placeholder, disabled
     } = props
 
-    const { name, onChange, onBlur, value } = field
-    const selectOption = options.find(option => option.value === value)
+    const { name, onBlur } = field
 
     const handleSelectedOptionChange = (selectOption) => {
         const selectValue = selectOption ? selectOption.value : selectOption

@@ -1,26 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateUserList } from './actions/UserList';
-import { updateUser } from './actions/User';
-import { updateMachineList } from './actions/MachineList';
-import Header from './components/Header/Header';
-import { BrowserRouter as Router, Switch, Link, Route, Redirect } from 'react-router-dom'
 import React, { Suspense } from 'react';
-import { Spinner } from 'reactstrap'
-import io from 'socket.io-client'
-import Login from './components/Login/Login';
-import MachineList from './components/machine_list/MachineList';
-import UserList from './components/user_list/UserList';
-import ScriptList from './components/script_list/ScriptList';
-import SessionList from './components/session_list/SessionList';
-import Register from './components/register/Register';
-import AddMachine from './components/machine/AddMachine';
-import AddScript from './components/script/AddScript';
-import CreateSession from './components/session/CreateSession';
+import { useDispatch } from 'react-redux';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { Spinner } from 'reactstrap';
+import io from 'socket.io-client';
 import swal from 'sweetalert';
 import { updateFinishedSession } from './actions/FinishedSession';
-import useSelection from 'antd/lib/table/hooks/useSelection';
+import { updateMachineList } from './actions/MachineList';
+import './App.css';
+import Header from './components/Header/Header';
+import Login from './components/Login/Login';
+import AddMachine from './components/machine/AddMachine';
+import MachineList from './components/machine_list/MachineList';
+import Register from './components/register/Register';
+import AddScript from './components/script/AddScript';
+import ScriptList from './components/script_list/ScriptList';
+import CreateSession from './components/session/CreateSession';
+import SessionList from './components/session_list/SessionList';
+import UserList from './components/user_list/UserList';
 
 function App() {
     /////////////////////////////////////////////

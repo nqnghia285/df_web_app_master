@@ -1,17 +1,14 @@
-import { Alert, InputNumber } from 'antd';
-import Title from 'antd/lib/skeleton/Title';
-import useSelection from 'antd/lib/table/hooks/useSelection';
-import { FastField, Field, Form, Formik } from 'formik';
+import { InputNumber } from 'antd';
+import { Field, Form, Formik } from 'formik';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Col, FormGroup, Input, Label, Row } from 'reactstrap';
-import { io } from 'socket.io-client';
+import { Button, Col, FormGroup, Label, Row } from 'reactstrap';
 import swal from 'sweetalert';
 import { updateFinishedSession } from '../../actions/FinishedSession';
 import { onSubmitCreateSession, validationSchemaCreateSession } from '../../pages/create_session/CreateSessionFunction';
 import { getMachineList } from '../../pages/machine/MachineFunction';
 import { getScriptList } from '../../pages/script/ScriptFunction';
-import { toggleStatusOfDevices, toggleStatusOfMachine, toggleIsAutoOfMachine, setCycleTimeOfMachine } from '../../pages/session/SesionFunction';
+import { setCycleTimeOfMachine, toggleIsAutoOfMachine, toggleStatusOfDevices, toggleStatusOfMachine } from '../../pages/session/SesionFunction';
 import SelectField from '../custom-fields/SelectField/SelectField';
 import SwitchButton from '../switch_button/SwitchButton';
 import './CreateSession.css';
@@ -95,24 +92,24 @@ const CreateSession = () => {
     const [bFan, setBFan] = useState(false)
     const [heater, setHeater] = useState(false)
 
-    const renderNoticeFinishedSession = () => {
-        dispatch(updateFinishedSession([false]))
+    // const renderNoticeFinishedSession = () => {
+    //     dispatch(updateFinishedSession([false]))
 
-        return (
-            swal({
-                title: 'Message',
-                text: 'Session finished!!!',
-                icon: 'success',
-                buttons: 'OK'
-            })
-        )
-    }
+    //     return (
+    //         swal({
+    //             title: 'Message',
+    //             text: 'Session finished!!!',
+    //             icon: 'success',
+    //             buttons: 'OK'
+    //         })
+    //     )
+    // }
 
     const [cycleTime, setCycleTime] = useState(3000)
 
     return (
         <>
-            {finished[0] ? renderNoticeFinishedSession() : <></>}
+            {/* {finished[0] ? renderNoticeFinishedSession() : <></>} */}
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchemaCreateSession}

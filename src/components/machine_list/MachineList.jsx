@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "reactstrap";
-import { updateFinishedSession } from "../../actions/FinishedSession";
 import { getMachineList } from "../../pages/machine/MachineFunction";
 import MachineTable from "./MachineTable";
 

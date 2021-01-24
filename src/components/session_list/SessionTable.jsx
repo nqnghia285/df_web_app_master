@@ -7,6 +7,7 @@ const SessionTable = (props) => {
     const { sessions } = props
 
     return (
+
         <Row>
             <Col span={12}>
                 <Table hover style={{ height: 'auto', width: '100vw' }}>

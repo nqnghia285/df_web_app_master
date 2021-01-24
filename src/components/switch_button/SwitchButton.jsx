@@ -2,7 +2,7 @@ import React from "react";
 import { Switch } from 'antd'
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons'
 
-function SwitchButton({ onClick, disabled, checked }) {
+function SwitchButton({ onClick, disabled }) {
     return (
         <Switch
             onClick={(checked, event) => { onClick(checked, event) }}
@@ -10,7 +10,6 @@ function SwitchButton({ onClick, disabled, checked }) {
             unCheckedChildren={<CloseOutlined />}
             defaultChecked={false}
             disabled={disabled}
-            checked={checked}
         />
     )
 }

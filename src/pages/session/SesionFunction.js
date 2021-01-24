@@ -16,3 +16,59 @@ export const getSessionList = async () => {
         })
     return sessionList
 }
+
+export const toggleStatusOfMachine = async (ms) => {
+    const response = await shipper.post('/user-action/control-machine', ms)
+        .then(res => {
+            if (res && res.isSuccess) {
+                return true
+            } else {
+                return false
+            }
+        })
+        .catch(err => false)
+
+    return response
+}
+
+export const toggleStatusOfDevices = async (ms) => {
+    const response = await shipper.post('/user-action/control-devices', ms)
+        .then(res => {
+            if (res && res.isSuccess) {
+                return true
+            } else {
+                return false
+            }
+        })
+        .catch(err => false)
+
+    return response
+}
+
+export const toggleIsAutoOfMachine = async (ms) => {
+    const response = await shipper.post('/user-action/control-manual-or-auto', ms)
+        .then(res => {
+            if (res && res.isSuccess) {
+                return true
+            } else {
+                return false
+            }
+        })
+        .catch(err => false)
+
+    return response
+}
+
+export const setCycleTimeOfMachine = async (ms) => {
+    const response = await shipper.post('/user-action/set-cycle-time', ms)
+        .then(res => {
+            if (res && res.isSuccess) {
+                return true
+            } else {
+                return false
+            }
+        })
+        .catch(err => false)
+
+    return response
+}

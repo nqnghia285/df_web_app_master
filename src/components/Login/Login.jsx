@@ -61,6 +61,9 @@ const Login = () => {
                     <Row className='background-login'>
                         <Col span={6} />
                         <Col span={12}>
+                            <div style={{ margin: '50px auto', width: '100%' }}>
+                                <h2 style={{ width: '100%', textAlign: 'center', color: 'green' }}>ĐĂNG NHẬP</h2>
+                            </div>
                             <Form className='form'>
                                 <FastField
                                     component={InputField}

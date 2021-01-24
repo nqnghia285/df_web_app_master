@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "reactstrap";
+import { updateFinishedSession } from "../../actions/FinishedSession";
 import { getMachineList } from "../../pages/machine/MachineFunction";
 import MachineTable from "./MachineTable";
 
@@ -16,12 +18,34 @@ const MachineList = () => {
         return () => { }
     }, [])
 
+    // const dispatch = useDispatch()
+
+    // const renderNoticeFinishedSession = () => {
+    //     dispatch(updateFinishedSession([false]))
+
+    //     return (
+    //         swal({
+    //             title: 'Message',
+    //             text: 'Session finished!!!',
+    //             icon: 'success',
+    //             buttons: 'OK'
+    //         })
+    //     )
+    // }
+
+    // const finished = useSelector(state => state.finished)
+
     return (
-        <Row>
-            <Col span={12}>
-                <MachineTable machines={machines} />
-            </Col>
-        </Row>
+        <>
+            <Row>
+                <div style={{ margin: '50px auto', width: '100%' }}>
+                    <h2 style={{ width: '100%', textAlign: 'center', color: 'green' }}>DANH SÁCH MÁY SẤY</h2>
+                </div>
+                <Col span={12}>
+                    <MachineTable machines={machines} />
+                </Col>
+            </Row>
+        </>
     )
 }
 

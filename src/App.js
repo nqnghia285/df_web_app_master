@@ -18,6 +18,9 @@ import Register from './components/register/Register';
 import AddMachine from './components/machine/AddMachine';
 import AddScript from './components/script/AddScript';
 import CreateSession from './components/session/CreateSession';
+import swal from 'sweetalert';
+import { updateFinishedSession } from './actions/FinishedSession';
+import useSelection from 'antd/lib/table/hooks/useSelection';
 
 function App() {
     /////////////////////////////////////////////
@@ -38,8 +41,20 @@ function App() {
         dispatch(updateMachineList(message.machineList))
     })
 
+    socket.on('server-send-ack-set-cycle-time', message => {
+        console.log('server-send-ack-set-cycle-time', message);
+
+    })
+
     socket.on('server-send-notice-finish-session', message => {
         console.log('server-send-notice-finish-session', message);
+        dispatch(updateFinishedSession([true]))
+        swal({
+            title: 'Message',
+            text: `Finished Session of Machine: ${message.code}`,
+            icon: 'success',
+            buttons: 'OK'
+        })
     })
 
     socket.on('server-send-ack-control-devices', message => {
